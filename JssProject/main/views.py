@@ -11,7 +11,9 @@ def create(request):
     if request.method == "POST":
         filled_form = JssForm(request.POST)
         if filled_form.is_valid(): # 유효성 검증
-            filled_form.save()
+            temp_form = filled_form.save(commit=False) # save 지연
+            temp_form.author = request.user
+            temp_form.save()
             return redirect('index')
     jss_form = JssForm()
     return render(request, 'create.html', {'jss_form':jss_form})
