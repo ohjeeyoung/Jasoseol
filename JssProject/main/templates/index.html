@@ -36,7 +36,9 @@
     <a href="{% url 'my_index' %}">
         <button>내 자기소개서만 보기</button>
     </a>
+    <a href="{% url 'index' %}">
     <button>모든 자기소개서 보기</button>
+    </a>
     <br>
 
     {% for jss in all_jss %}
