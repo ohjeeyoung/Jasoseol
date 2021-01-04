@@ -33,6 +33,11 @@
         </a>
         <p>자기소개서 작성</p>
     </div>
+    <a href="{% url 'my_index' %}">
+        <button>내 자기소개서만 보기</button>
+    </a>
+    <button>모든 자기소개서 보기</button>
+    <br>
 
     {% for jss in all_jss %}
     <a href="{% url 'detail' jss.id %}">
